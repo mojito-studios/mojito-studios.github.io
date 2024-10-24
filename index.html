@@ -205,23 +205,28 @@
                         <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
                         <script>
                             (function(){
-                                emailjs.init("KiU9Wfz7-AsyPG4ap"); // Inicializa EmailJS con tu User ID
+                                emailjs.init("KiU9Wfz7-AsyPG4ap"); 
                             })();
-                
-                            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                                event.preventDefault(); // Prevenimos que se recargue la página
-                
-                                // Enviamos el formulario usando EmailJS
-                                emailjs.sendForm('service_p9c29ne', 'template_bjl6zq9', this) // Reemplaza 'TU_TEMPLATE_ID' con tu ID de plantilla
-                                    .then((result) => {
-                                        console.log('Éxito:', result.text);
-                                        document.getElementById('confirmationMessage').style.display = 'block'; // Mostrar mensaje de confirmación
-                                        this.reset(); // Opcional: reiniciar el formulario
-                                    }, (error) => {
-                                        console.log('Error:', error.text);
-                                        alert('Ocurrió un error inesperado.');
+                                        document.getElementById('contactForm').addEventListener('submit', function(event) {
+                                        event.preventDefault(); 
+                                        
+                                        emailjs.sendForm('service_p9c29ne', 'template_bjl6zq9', this)
+                                            .then((result) => {
+                                                console.log('Éxito en el primer envío:', result.text);
+
+                                                return emailjs.sendForm('service_p9c29ne', 'template_hro0dke', this);
+                                            })
+                                            .then((result) => {
+                                                console.log('Éxito en el envío de autoreply:', result.text);
+                                                
+                                                document.getElementById('confirmationMessage').style.display = 'block';
+                                                this.reset();
+                                            })
+                                            .catch((error) => {
+                                                console.log('Error en el proceso de envío:', error.text);
+                                                alert('Ocurrió un error inesperado.');
+                                            });
                                     });
-                            });
                         </script>
                     </div>
                 </div>
