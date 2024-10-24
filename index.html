@@ -51,101 +51,202 @@
                 <p class="masthead-subheading font-weight-light mb-0">¡Estudio indie de desarrollo de videojuegos! Actualmente trabajando en Mage n' Hyde.</p>
             </div>
         </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Mage n’Hyde</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
+       <!-- Portfolio Section-->
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Mage n’Hyde</h2>
+        
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <!-- Menu de navegación para subsecciones -->
+        <nav class="portfolio-nav">
+            <ul class="nav nav-pills justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#historia">Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#personajes">Personajes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#mundo">Mundo</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Subsección Historia con carrusel y texto -->
+        <div id="historia" class="portfolio-subsection mt-5">
+            <h3 class="text-center text-uppercase text-secondary mb-4">Historia</h3>
+            <!-- Carrusel de imágenes -->
+            <div id="carouselHistoria" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/portfolio/cabin.png" class="d-block w-100" alt="Historia Imagen 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/portfolio/cake.png" class="d-block w-100" alt="Historia Imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/portfolio/circus.png" class="d-block w-100" alt="Historia Imagen 3">
+                    </div>
                 </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
+                <!-- Flechas de navegación -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHistoria" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHistoria" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- Texto explicativo -->
+            <div class="mt-4 text-center">
+                <p class="text-muted">Texto prueba</p>
+            </div>
+        </div>
+
+        <!-- Subsección Personajes con carrusel y texto -->
+        <div id="personajes" class="portfolio-subsection mt-5">
+            <h3 class="text-center text-uppercase text-secondary mb-4">Personajes</h3>
+            <!-- Carrusel de imágenes -->
+            <div id="carouselPersonajes" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/portfolio/game.png" class="d-block w-100" alt="Personajes Imagen 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/portfolio/safe.png" class="d-block w-100" alt="Personajes Imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/portfolio/submarine.png" class="d-block w-100" alt="Personajes Imagen 3">
+                    </div>
+                </div>
+                <!-- Flechas de navegación -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselPersonajes" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselPersonajes" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- Texto explicativo -->
+            <div class="mt-4 text-center">
+                <p class="text-muted">Texto prueba</p>
+            </div>
+        </div>
+
+        <!-- Subsección Mundo con carrusel y texto -->
+        <div id="mundo" class="portfolio-subsection mt-5">
+            <h3 class="text-center text-uppercase text-secondary mb-4">Mundo</h3>
+            <!-- Carrusel de imágenes -->
+            <div id="carouselMundo" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/portfolio/cabin.png" class="d-block w-100" alt="Mundo Imagen 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/portfolio/cake.png" class="d-block w-100" alt="Mundo Imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/portfolio/circus.png" class="d-block w-100" alt="Mundo Imagen 3">
+                    </div>
+                </div>
+                <!-- Flechas de navegación -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselMundo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselMundo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- Texto explicativo -->
+            <div class="mt-4 text-center">
+                <p class="text-muted">Texto prueba.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="container">
+        <!-- About Section Heading -->
+        <h2 class="page-section-heading text-center text-uppercase text-white">Sobre nosotros</h2>
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        
+        <!-- Carrusel de imágenes y texto -->
+        <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <img src="assets/img/portfolio/cabin.png" class="d-block w-100" alt="Mojito Studios - Historia">
+                        </div>
+                        <div class="col-lg-6">
+                            <p class="lead">Mojito Studios es un equipo independiente de desarrollo de videojuegos, comprometido con la creación de experiencias únicas y memorables. Nuestro primer proyecto, <strong>Mage n'Hyde</strong>, es solo el comienzo de nuestra aventura en el mundo del entretenimiento interactivo.</p>
                         </div>
                     </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="..." />
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <img src="assets/img/portfolio/cake.png" class="d-block w-100" alt="Mojito Studios - Misión">
+                        </div>
+                        <div class="col-lg-6">
+                            <p class="lead">Nuestra misión es ofrecer juegos que no solo entretengan, sino que también inviten a reflexionar. Buscamos que cada jugador se sumerja en historias profundas y mundos cuidadosamente construidos, llenos de detalles y sorpresas.</p>
                         </div>
                     </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="..." />
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <img src="assets/img/portfolio/circus.png" class="d-block w-100" alt="Mojito Studios - Visión">
                         </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/game.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="..." />
+                        <div class="col-lg-6">
+                            <p class="lead">Nuestra visión es consolidarnos como un estudio referente en el desarrollo indie, donde la pasión por los videojuegos y la innovación técnica se encuentran para ofrecer experiencias inolvidables a los jugadores de todo el mundo.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">Sobre nosotros</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://linktr.ee/mojitostudios?utm_source=linktree_admin_share">
-                        <i class="fas fa-download me-2"></i>
-                        ¡Echa un vistazo a nuestro trabajo!
-                    </a>
-                </div>
-            </div>
-        </section>
+            
+            <!-- Controles del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- About Section Button -->
+        <div class="text-center mt-4">
+            <a class="btn btn-xl btn-outline-light" href="https://linktr.ee/mojitostudios?utm_source=linktree_admin_share">
+                <i class="fas fa-download me-2"></i>
+                ¡Echa un vistazo a nuestro trabajo!
+            </a>
+        </div>
+    </div>
+</section>
         <!-- Contact Section-->
         <section class="page-section" id="contact">
             <div class="container">
