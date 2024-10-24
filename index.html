@@ -160,7 +160,7 @@
                 <!-- Contact Section Form-->
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-                        <form id="contactForm" action="https://formsubmit.co/rebeldeprincess666@gmail.com" method="POST">
+                        <form id="contactForm" action="https://formsubmit.co/mojitostudios2425@gmail.com" method="POST">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" name="name" type="text" placeholder="Ingresa tu nombre..." required />
@@ -211,21 +211,14 @@
                                 fetch(this.action, {
                                     method: 'POST',
                                     body: new FormData(this),
-                                    headers: { 'Accept': 'application/json' }
+                                    mode: 'no-cors' // Agregar esta línea
                                 })
                                 .then(response => {
-                                    if (response.ok) {
-                                        // Escondemos el formulario y mostramos el mensaje de confirmación
-                                        document.getElementById('contactForm').style.display = 'none';
-                                        document.getElementById('confirmationMessage').style.display = 'block';
-                                    } else {
-                                        alert('Hubo un problema enviando el formulario.');
-                                    }
+                                    // No podrás acceder a la respuesta aquí
                                 })
                                 .catch(error => {
                                     alert('Ocurrió un error inesperado.');
                                 });
-                            });
                         </script>
         </section>
         <!-- Footer-->
@@ -460,5 +453,12 @@
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
