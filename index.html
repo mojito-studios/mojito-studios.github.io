@@ -160,66 +160,71 @@
                 <!-- Contact Section Form-->
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-                        <form id="contactForm" action="https://formsubmit.co/mojitostudios2425@gmail.com" method="POST">
+                        <form id="contactForm">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" name="name" type="text" placeholder="Ingresa tu nombre..." required />
                                 <label for="name">Nombre Completo</label>
                                 <div class="invalid-feedback">Por favor, ingresa tu nombre completo.</div>
                             </div>
-                            
+                
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
                                 <label for="email">Correo Electrónico</label>
                                 <div class="invalid-feedback">Por favor, ingresa un correo electrónico válido.</div>
                             </div>
-                            
+                
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890" required />
                                 <label for="phone">Número de Teléfono</label>
                                 <div class="invalid-feedback">Por favor, ingresa tu número de teléfono.</div>
                             </div>
-                            
+                
                             <!-- Message input-->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" name="message" placeholder="Escribe tu mensaje aquí..." style="height: 10rem" required></textarea>
                                 <label for="message">Mensaje</label>
                                 <div class="invalid-feedback">Por favor, escribe tu mensaje.</div>
                             </div>
-                            
-                            <!-- Hidden inputs for formsubmit -->
+                
+                            <!-- Hidden inputs for EmailJS -->
                             <input type="hidden" name="_subject" value="Nuevo mensaje del formulario de contacto">
                             <input type="hidden" name="_captcha" value="false">
-                            
+                
                             <!-- Submit Button-->
                             <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Enviar</button>
                         </form>
-                        
+                
                         <!-- Mensaje de confirmación -->
                         <div id="confirmationMessage" class="mt-3" style="display: none;">
                             <p class="text-success">¡Mensaje enviado, gracias!</p>
                         </div>
-                        
+                
+                        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
                         <script>
-                            // Interceptamos el evento submit del formulario
+                            (function(){
+                                emailjs.init("KiU9Wfz7-AsyPG4ap"); // Inicializa EmailJS con tu User ID
+                            })();
+                
                             document.getElementById('contactForm').addEventListener('submit', function(event) {
                                 event.preventDefault(); // Prevenimos que se recargue la página
-                                
-                                // Enviamos el formulario usando fetch
-                                fetch(this.action, {
-                                    method: 'POST',
-                                    body: new FormData(this),
-                                    mode: 'no-cors' // Agregar esta línea
-                                })
-                                .then(response => {
-                                    // No podrás acceder a la respuesta aquí
-                                })
-                                .catch(error => {
-                                    alert('Ocurrió un error inesperado.');
-                                });
+                
+                                // Enviamos el formulario usando EmailJS
+                                emailjs.sendForm('service_p9c29ne', 'template_bjl6zq9', this) // Reemplaza 'TU_TEMPLATE_ID' con tu ID de plantilla
+                                    .then((result) => {
+                                        console.log('Éxito:', result.text);
+                                        document.getElementById('confirmationMessage').style.display = 'block'; // Mostrar mensaje de confirmación
+                                        this.reset(); // Opcional: reiniciar el formulario
+                                    }, (error) => {
+                                        console.log('Error:', error.text);
+                                        alert('Ocurrió un error inesperado.');
+                                    });
+                            });
                         </script>
+                    </div>
+                </div>
         </section>
         <!-- Footer-->
         <footer class="footer text-center">
