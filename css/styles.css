@@ -183,6 +183,7 @@ address {
   line-height: inherit;
 }
 
+
 ol,
 ul {
   padding-left: 2rem;
@@ -307,6 +308,11 @@ figure {
 img,
 svg {
   vertical-align: middle;
+  max-width: 50%; 
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+  
 }
 
 table {
