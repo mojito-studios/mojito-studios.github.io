@@ -15,6 +15,26 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+        <style>
+            /* Estilo del contenedor de audio */
+            .audio-container {
+                z-index: 1050; /* Asegura que esté encima de otros elementos */
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+    
+            /* Ajuste del slider */
+            #volumeSlider {
+                width: 150px;
+            }
+    
+            /* Ocultar inicialmente el contenedor del slider */
+            .d-none {
+                display: none !important;
+            }
+        </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -51,6 +71,59 @@
                 <p class="masthead-subheading font-weight-light mb-0">¡Estudio indie de desarrollo de videojuegos! Actualmente trabajando en Mage n' Hyde.</p>
             </div>
         </header>
+        <div class="audio-container">
+            <button id="audioControlButton" class="btn btn-primary mb-2">
+                🎶 Toca para reproducir música
+            </button>
+            
+            <!-- Controles de volumen (inicialmente ocultos) -->
+            <div id="volumeSliderContainer" class="d-none">
+                <input id="volumeSlider" type="range" min="0" max="1" step="0.1" value="0.5" class="form-range"
+                    oninput="document.getElementById('backgroundAudio').volume=this.value">
+                <button class="btn btn-secondary btn-sm mt-1" 
+                    onclick="toggleMute(this, document.getElementById('backgroundAudio'))">🔇 Silenciar</button>
+            </div>
+        </div>
+    
+        <!-- Audio de fondo -->
+        <audio id="backgroundAudio" loop>
+            <source src="assets/GaleriaArte/MagenHydeMusica.mp3" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+    
+        <script>
+            function toggleMute(button, audio) {
+                if (audio.muted) {
+                    audio.muted = false;
+                    button.textContent = '🔇 Silenciar';
+                } else {
+                    audio.muted = true;
+                    button.textContent = '🔊 Activar sonido';
+                }
+            }
+
+            document.getElementById('audioControlButton').addEventListener('click', function() {
+                var audio = document.getElementById('backgroundAudio');
+                var button = this;
+    
+
+                if (audio.paused) {
+                    audio.play().then(() => {
+
+                        button.textContent = '🎵 Volumen';
+                        
+
+                        button.onclick = function() {
+                            document.getElementById('volumeSliderContainer').classList.toggle('d-none'); 
+                        }
+                        
+                        document.getElementById('volumeSliderContainer').classList.remove('d-none');
+                    }).catch(function(error) {
+                        console.log('El audio no pudo reproducirse:', error);
+                    });
+                }
+            });
+        </script>
        <!-- Portfolio Section-->
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
@@ -361,6 +434,9 @@
                     </div>
                     <div class="carousel-item">
                         <img src="assets/GaleriaArte/cONCEPTmINIONS.png" class="d-block w-100" alt="Personajes Imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/GaleriaArte/Presentation.png" class="d-block w-100" alt="Personajes Imagen 2">
                     </div>
                     <!--<div class="carousel-item">
                         <img src="assets/img/portfolio/submarine.png" class="d-block w-100" alt="Personajes Imagen 3">
