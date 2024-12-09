@@ -91,6 +91,52 @@
   }
 }
 
+.masthead {
+  background-color: #6f42c1; 
+  color: #fff;
+  position: relative;
+  overflow: hidden; 
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 112%;
+  height: 112%;
+  
+
+ 
+  z-index: 1; 
+}
+
+.masthead-image {
+  width: 290%; 
+  height: auto; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+.logo-container {
+  position: relative; 
+  z-index: 2; 
+}
+
+.masthead-avatar {
+  max-width: 200px; 
+  height: auto;
+}
+
+.masthead-heading,
+.masthead-subheading {
+  z-index: 3;
+  position: relative;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+  background-color: rgba(0, 0, 0, 0.3); 
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
