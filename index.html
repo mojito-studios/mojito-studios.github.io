@@ -34,9 +34,49 @@
             .d-none {
                 display: none !important;
             }
+
+            #transition-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999; /* Asegurarse de que el video cubra toda la página */
+}
+        #transition-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Ocultar el contenido principal al inicio */
+        #main-content {
+            display: none;
+        }
+
+        
         </style>
     </head>
     <body id="page-top">
+        <div id="transition-video">
+            <video autoplay muted playsinline>
+                <source src="assets/GaleriaArte/GIFS/lv_0_20241214190445.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+        <script>
+            // Escuchar cuando el video termine
+            const videoContainer = document.getElementById('transition-video');
+            const video = videoContainer.querySelector('video');
+            
+            video.onended = () => {
+                // Ocultar el contenedor del video
+                videoContainer.style.display = 'none';
+        
+                // Activar la transición de opacidad en toda la página
+                document.body.classList.add('loaded');
+            };
+        </script>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
@@ -244,14 +284,19 @@
                     <span class="carousel-control-next-icon" style="background-color: red;" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-            
+                
         </div>
+        <img src="assets/ImagenesPresentacion/PowerUp (2).jpg" class="d-block w-100" alt="Personajes Imagen 3">
+        <img src="assets/ImagenesPresentacion/LuchaEnemigo.jpg" class="d-block w-100" alt="Personajes Imagen 3">
 
         <div class="mt-4 text-center">
             <p class="text-muted"> ¡Tranfórmate en el objeto que mejor te convenga para tu estrategia y sorprende al enemigo!
                 <img src="assets/ImagenesPresentacion/13.png" class="d-block w-100" alt="Personajes Imagen 3">
+                <img src="assets/ImagenesPresentacion/Escondite (2).jpg" class="d-block w-100" alt="Personajes Imagen 3">
                     </p>
         </div>
+
+    
 
         <!-- Subsección Mundo con carrusel y texto -->
         <div id="historia" class="portfolio-subsection mt-5">
@@ -259,13 +304,14 @@
             <!-- Texto explicativo -->
             <div class="mt-4 text-center">
                 <p class="text-muted">En un mundo mágico, dos poderosos Magos Supremos compiten por completar su poder, pero cada uno necesita una energía especial al que se accede mediante la destrucción de la torre de su oponente. Ya que carecen de cuerpos físicos, deben enviar a sus esbirros —pequeños magos leales y con habilidades únicas— a luchar en su nombre. La misión de estos esbirros es destruir la torre enemiga y llevar esa energía a su Mago Supremo, ya que solo uno puede alcanzar el poder absoluto.</p>
-                <p class="text-muted">Los esbirros se invocaran dentro de un bosquecito donde deben defender sus torres de los enemigos, así como atacar y destruir la de sus oponentes.</p>
+                <p class="text-muted">Los esbirros se invocarán dentro de un bosquecito donde deben defender sus torres de los enemigos, así como atacar y destruir la de sus oponentes.</p>
                 <img src="assets/GaleriaArte/GIFS/IMG_1868 (2).gif" class="d-block w-100" alt="Mundo Imagen 1">
             </div>
 
             <div class="mt-4 text-center">
-                <p class="text-muted">¡Los esbirros deben destruir esta torre! ¿Quién será el evencedor?</p>
+                <p class="text-muted">¡Los esbirros deben destruir esta torre! ¿Quién será el vencedor?</p>
                 <img src="assets/ImagenesPresentacion/Torre.png" class="d-block w-100" alt="Mundo Imagen 1">
+                <img src="assets/ImagenesPresentacion/torre.jpg" class="d-block w-100" alt="Mundo Imagen 1">
             </div>
             <!-- Carrusel de imágenes -->
             <!--<div id="carouselHistoria" class="carousel slide" data-bs-ride="carousel">
@@ -297,76 +343,100 @@
             <div id="personajes" class="portfolio-subsection mt-5">
                 <h3 class="text-center text-uppercase text-secondary mb-4">Personajes</h3>
                 
+
                 <div class="row align-items-center mb-5">
                     <div class="mt-4 text-center">
                         <p class="text-muted">Cada esbirro bajo el mando de su Mago Supremo cuenta con habilidades y características únicas. ¡Adéntrate en la batlla por el poder y escoge a tu personaje favorito! Piensa en tu estrategia con tu compañero y escoged que personaje se ajusta más a vosotros, si uno más ofensivo (asesino) o más defensivo (tanque).</p>
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-lg-12" style="padding-bottom: 50px;">
+                        <img src="assets/ImagenesPresentacion/imagenPersonajes2.png" alt="Mago de Sigilo" style="width: 100%; height: auto;">
+                    </div>
+
+                    <div class="col-lg-12" style="padding-bottom: 50px;">
+                        <img src="assets/ImagenesPresentacion/ImagenPersonajes.png" alt="Mago de Sigilo" style="width: 100%; height: auto;">
+                    </div>
+                </div>
+
+                
+                
                 <!-- Carrusel de imágenes y texto -->
                 <div id="carouselPersonajes" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <!-- Slide 1 -->
-                        <div class="carousel-item active">
-                            <div class="row align-items-center">
-                                <div class="col-lg-6">
-                                    <img src="assets/GaleriaArte/GIFS/irene.gif" class="d-block w-100" alt="Mago de Sigilo">
-                                </div>
-                                <div class="col-lg-6 text-center">
-                                    <h5 class="text-uppercase text-secondary mb-3">KITTYKAT</h5>
-                                    <p class="text-muted">
-                                        En la dimensión arcana, donde los Magos Supremos libran su batalla eterna, surge KittyKat, una traviesa y poderosa gata mágica nacida de un accidente mágico o un experimento fallido, según las leyendas. Con su carácter caótico y hechizos descontrolados, KittyKat se unió a la lucha por pura diversión, viendo al Mago Supremo como un "amigo imaginario" que le propone emocionantes aventuras. Para ella, la batalla es un juego lleno de luces y magia, donde puede disfrutar del caos y dejar su huella con risas, colores y un toque de magia impredecible.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+<div class="carousel-item active">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <img src="assets/GaleriaArte/GIFS/irene.gif" class="d-block w-100" alt="Mago de Sigilo">
+        </div>
+        <div class="col-lg-6 text-center">
+            <h5 class="text-uppercase text-secondary mb-3">KITTYKAT</h5>
+            <p class="text-muted">
+                En la dimensión arcana, donde los Magos Supremos libran su batalla eterna, surge KittyKat, una traviesa y poderosa gata mágica nacida de un accidente mágico o un experimento fallido, según las leyendas. Con su carácter caótico y hechizos descontrolados, KittyKat se unió a la lucha por pura diversión, viendo al Mago Supremo como un "amigo imaginario" que le propone emocionantes aventuras. Para ella, la batalla es un juego lleno de luces y magia, donde puede disfrutar del caos y dejar su huella con risas, colores y un toque de magia impredecible.
+            </p>
+            <!-- GIFs adicionales -->
+            <img src="assets/GaleriaArte/GIFS/gifgit (1).gif" class="mt-3" alt="KittyKat Attack" style="width: 40%; height: auto;">
+            <img src="assets/GaleriaArte/GIFS/ulti irene.gif" class="mt-3" alt="KittyKat Special" style="width: 40%; height: auto;">
+        </div>
+    </div>
+</div>
 
-                        <!-- Slide 2 -->
-                        <div class="carousel-item">
-                            <div class="row align-items-center">
-                                <div class="col-lg-6">
-                                    <img src="assets/GaleriaArte/GIFS/Miriam.gif" class="d-block w-100" alt="Mago Tanque">
-                                </div>
-                                <div class="col-lg-6 text-center">
-                                    <h5 class="text-uppercase text-secondary mb-3">PUPETTY</h5>
-                                    <p class="text-muted">
-                                        En los rincones más antiguos de la dimensión arcana, donde la magia fluye incluso en lo inerte, nació Pupetty. Nadie sabe si fue creado por manos mortales o si emergió de los residuos mágicos de un conflicto olvidado. Con una actitud apática, Pupetty vaga por el mundo acompañado de dos enormes manos de madera que maneja como marionetas y un sombrero viviente que murmura secretos, a los cuales rara vez responde. Sin recuerdos de un pasado, su existencia parece atada a fuerzas mayores, quizás la voluntad de su Mago Supremo o un eco de una magia más antigua. Su mirada vacía y su inquietante silencio esconden un misterio profundo, haciendo que quienes lo observan se pregunten si Pupetty es solo un sirviente o un testigo de los conflictos mágicos que moldean su mundo.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+<!-- Slide 2 -->
+<div class="carousel-item">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <img src="assets/GaleriaArte/GIFS/Miriam.gif" class="d-block w-100" alt="Mago Tanque">
+        </div>
+        <div class="col-lg-6 text-center">
+            <h5 class="text-uppercase text-secondary mb-3">PUPETTY</h5>
+            <p class="text-muted">
+                En los rincones más antiguos de la dimensión arcana, donde la magia fluye incluso en lo inerte, nació Pupetty. Nadie sabe si fue creado por manos mortales o si emergió de los residuos mágicos de un conflicto olvidado. Con una actitud apática, Pupetty vaga por el mundo acompañado de dos enormes manos de madera que maneja como marionetas y un sombrero viviente que murmura secretos, a los cuales rara vez responde. Sin recuerdos de un pasado, su existencia parece atada a fuerzas mayores, quizás la voluntad de su Mago Supremo o un eco de una magia más antigua. Su mirada vacía y su inquietante silencio esconden un misterio profundo, haciendo que quienes lo observan se pregunten si Pupetty es solo un sirviente o un testigo de los conflictos mágicos que moldean su mundo.
+            </p>
+            <!-- GIFs adicionales -->
+            <img src="assets/GaleriaArte/GIFS/gifgit.gif" class="mt-3" alt="Pupetty Attack" style="width: 30%; height: auto;">
+            <img src="assets/GaleriaArte/GIFS/miriam ulti.gif" class="mt-3" alt="Pupetty Special" style="width: 50%; height: auto;">
+        </div>
+    </div>
+</div>
 
-                     <!-- Slide 2 -->
-                     <div class="carousel-item">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <img src="assets/GaleriaArte/GIFS/pablo.gif" class="d-block w-100" alt="Mago Tanque">
-                            </div>
-                            <div class="col-lg-6 text-center">
-                                <h5 class="text-uppercase text-secondary mb-3">DEVEGAN</h5>
-                                <p class="text-muted">
-                                    Devegan era un joven intento de mago más en su aldea. Entre los habitantes se contaba la historia de cómo tres hechiceros de la aldea se marcharon y se convirtieron en los mayores magos de Oriente, que volverían tiempo después con riqueza y nuevos poderes arcanos. Decidido por conocer la verdad de esta leyenda, emprendió un viaje al este, y nadie supo nada de él durante décadas. Cuando ya todos lo dieron por muerto, regresó con una personalidad irreconocible, y con un poder ígneo abrumador. Nadie se ha atrevido a preguntarle qué encontró en el este.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+<!-- Slide 3 -->
+<div class="carousel-item">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <img src="assets/GaleriaArte/GIFS/pablo.gif" class="d-block w-100" alt="Mago Tanque">
+        </div>
+        <div class="col-lg-6 text-center">
+            <h5 class="text-uppercase text-secondary mb-3">DEVEGAN</h5>
+            <p class="text-muted">
+                Devegan era un joven intento de mago más en su aldea. Entre los habitantes se contaba la historia de cómo tres hechiceros de la aldea se marcharon y se convirtieron en los mayores magos de Oriente, que volverían tiempo después con riqueza y nuevos poderes arcanos. Decidido por conocer la verdad de esta leyenda, emprendió un viaje al este, y nadie supo nada de él durante décadas. Cuando ya todos lo dieron por muerto, regresó con una personalidad irreconocible, y con un poder ígneo abrumador. Nadie se ha atrevido a preguntarle qué encontró en el este.
+            </p>
+            <!-- GIFs adicionales -->
+            <img src="assets/GaleriaArte/GIFS/gifgit (2).gif" class="mt-3" alt="Devegan Fireball" style="width: 40%; height: auto;">
+            <img src="assets/GaleriaArte/GIFS/ulti pablo.gif" class="mt-3" alt="Devegan Ultimate" style="width: 40%; height: auto;">
+        </div>
+    </div>
+</div>
 
+<!-- Slide 4 -->
+<div class="carousel-item">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <img src="assets/GaleriaArte/GIFS/hugo.gif" class="d-block w-100" alt="Mago Tanque">
+        </div>
+        <div class="col-lg-6 text-center">
+            <h5 class="text-uppercase text-secondary mb-3">GRIMM</h5>
+            <p class="text-muted">
+                Hace décadas, en una ciudad cuyo nombre se ha perdido, una terrible enfermedad arrasó con gran parte de la población. Los magos supremos de esa época intentaron contener la propagación mediante magia, pero el hechizo se descontroló. Aunque la epidemia se detuvo, de la muerte, el hedor y la putrefacción que plagaban las calles, nació Grimm: un necromorfo formado por una masa negra de cadáveres, con un retorcido y oscuro sentido del humor y una personalidad excéntrica. Dedicó su vida a la batalla entre los hechiceros supremos, pues su voluntad está atada a la de sus creadores.
+            </p>
+            <!-- GIFs adicionales -->
+            <img src="assets/GaleriaArte/GIFS/gifgit (3).gif" class="mt-3" alt="Grimm Raise Dead" style="width: 30%; height: auto;">
+            <img src="assets/GaleriaArte/GIFS/ulti animación.gif" class="mt-3" alt="Grimm Dark Pulse" style="width: 30%; height: auto;">
+        </div>
+    </div>
+</div>
 
-                 <!-- Slide 2 -->
-                 <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <img src="assets/GaleriaArte/GIFS/hugo.gif" class="d-block w-100" alt="Mago Tanque">
-                        </div>
-                        <div class="col-lg-6 text-center">
-                            <h5 class="text-uppercase text-secondary mb-3">GRIMM</h5>
-                            <p class="text-muted">
-                                Hace décadas, en una ciudad cuyo nombre se ha perdido, una terrible enfermedad arrasó con gran parte de la población. Los magos supremos de esa época intentaron contener la propagación mediante magia, pero el hechizo se descontroló. Aunque la epidemia se detuvo, de la muerte, el hedor y la putrefacción que plagaban las calles, nació Grimm: un necromorfo formado por una masa negra de cadáveres, con un retorcido y oscuro sentido del humor y una personalidad excéntrica. Dedicó su vida a la batalla entre los hechiceros supremos, pues su voluntad está atada a la de sus creadores.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
                     <!-- Controles del carrusel -->
